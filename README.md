@@ -36,6 +36,15 @@ So the paper's number can be reproduced, but only with their leaky setup, where 
   - `fig_compare.png` - MCC for each setup, plus precision-recall curves on the real-ratio test set
   - `fig_confusion.png` - confusion matrices for E1, E2 and E3 Extra Trees
   - `fig_cv.png` - cross-validation vs test PR-AUC for the E3 models
+- `p2out/` - the outputs saved by my run of the notebook
+  - `results.json` - all the metrics, CV scores, chosen settings and thresholds
+  - `comparison.csv` - the comparison table with the paper (all metrics, not just MCC)
+  - `fig_compare.png`, `fig_confusion.png`, `fig_cv.png` - the same figures as in `figures/`
+  - `p_E2.npy`, `p_E3_ET.npy`, `p_E3_RF.npy`, `p_E3_LR.npy`, `p_E3_ET_summary.npy` - predicted theft probabilities on the test set for each model
+  - `y_test.npy` - true labels of the test set
+  - `split_test_idx.npy` - row indices of the test customers, so the same split can be checked
+
+  With the predictions and labels saved, the figures and metrics can be recalculated without rerunning the models.
 
 ## How to run it
 
@@ -50,4 +59,4 @@ Install the libraries. I used scikit-learn 1.9.1, imbalanced-learn 0.14.2 and nu
 pip install numpy pandas matplotlib scikit-learn imbalanced-learn
 ```
 
-Then run all the cells from top to bottom. Results (`results.json`, `comparison.csv`, the figures and the saved predictions) go into a `p2out` folder, and progress is logged to `progress.txt`. I set `SEED = 42` everywhere, so the split and the tuned settings should come out the same each time. The whole run took me about 47 minutes, mostly because of the nested CV for Random Forest (around 26 minutes on its own).
+Then run all the cells from top to bottom. The notebook writes everything listed above into `p2out/` (overwriting what's there), and logs progress to `progress.txt`. I set `SEED = 42` everywhere, so the split and the tuned settings should come out the same each time. The whole run took me about 47 minutes, mostly because of the nested CV for Random Forest (around 26 minutes on its own).
