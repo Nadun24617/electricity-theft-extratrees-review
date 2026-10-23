@@ -1,0 +1,14 @@
+[      0s] bootstrap confidence intervals
+[     17s] baseline: authors' model
+[    407s] baseline: corrected features
+[    681s] alternative: HistGradientBoosting
+[    768s] stress 1: remove 10-25 Sep 2016
+[   1406s] stress 2: reading noise sigma=0.1
+[   1411s] stress 2: reading noise sigma=0.3
+[   1416s] stress 2: reading noise sigma=0.5
+[   1420s] stress 3: flip 10% of training theft labels
+[   2057s] stress 3: flip 20% of training theft labels
+[   2960s] stress 4: add 1000 useless features
+[   3830s] stress 4: add 4000 useless features
+[   5940s] bootstrap confidence intervals
+[   6015s] done
